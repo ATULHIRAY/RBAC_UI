@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">RBAC Dashboard</Link> {/* Home link */}
+        <Link className="navbar-brand" to="/">RBAC Dashboard</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,10 +21,10 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/users">Users</Link> {/* Link to Users Table */}
+              <Link className="nav-link" to="/users">Users</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/roles">Roles</Link> {/* Link to Roles Table */}
+              <Link className="nav-link" to="/roles">Roles</Link>
             </li>
           </ul>
         </div>
