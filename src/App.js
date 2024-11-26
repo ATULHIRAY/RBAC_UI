@@ -5,6 +5,7 @@ import UserTable from './components/UserTable'; // Import UserTable component
 import RoleTable from './components/RoleTable'; // Import RoleTable component
 import './App.css'; // Optional, for styling
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   return (
