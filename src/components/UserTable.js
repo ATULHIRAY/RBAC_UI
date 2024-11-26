@@ -62,35 +62,37 @@ function UserTable() {
       <Button variant="primary" className="mb-3" onClick={() => handleShow()}>
         Add User
       </Button>
-      <Table striped bordered hover className="table-responsive">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
-              <td>{user.status}</td>
-              <td className="d-flex gap-2">
-                <Button variant="warning" onClick={() => handleShow(user)}>
-                  Edit
-                </Button>
-                <Button variant="danger" onClick={() => handleDelete(user.email)}>
-                  Delete
-                </Button>
-              </td>
+      <div className="table-responsive">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                <td>{user.status}</td>
+                <td className="d-flex flex-wrap gap-2">
+                  <Button variant="warning" size="sm" onClick={() => handleShow(user)}>
+                    Edit
+                  </Button>
+                  <Button variant="danger" size="sm" onClick={() => handleDelete(user.email)}>
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
 
       {/* Modal for Add/Edit User */}
       <Modal show={show} onHide={handleClose}>
