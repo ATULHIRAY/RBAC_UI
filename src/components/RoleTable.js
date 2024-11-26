@@ -43,31 +43,33 @@ function RoleTable() {
       <Button variant="primary" className="mb-3" onClick={() => handleShow()}>
         Add Role
       </Button>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Role Name</th>
-            <th>Permissions</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {roles.map((role, index) => (
-            <tr key={index}>
-              <td>{role.name}</td>
-              <td>{role.permissions.join(', ')}</td>
-              <td className="gap-2 d-flex">
-                <Button variant="warning" className="mr-2" onClick={() => handleShow(role)}>
-                  Edit
-                </Button>
-                <Button variant="danger" onClick={() => handleDelete(role.name)}>
-                  Delete
-                </Button>
-              </td>
+      <div className="table-responsive">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Role Name</th>
+              <th>Permissions</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {roles.map((role, index) => (
+              <tr key={index}>
+                <td>{role.name}</td>
+                <td>{role.permissions.join(', ')}</td>
+                <td className="gap-2 d-flex flex-wrap">
+                  <Button variant="warning" size="sm" onClick={() => handleShow(role)}>
+                    Edit
+                  </Button>
+                  <Button variant="danger" size="sm" onClick={() => handleDelete(role.name)}>
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
 
       {/* Modal for Adding/Editing Role */}
       <Modal show={show} onHide={handleClose}>
