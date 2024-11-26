@@ -62,7 +62,7 @@ function UserTable() {
       <Button variant="primary" className="mb-3" onClick={() => handleShow()}>
         Add User
       </Button>
-      <Table striped bordered hover>
+      <Table striped bordered hover className="table-responsive">
         <thead>
           <tr>
             <th>Name</th>
